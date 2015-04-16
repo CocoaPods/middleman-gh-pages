@@ -48,7 +48,7 @@ file GH_PAGES_REF => BUILD_DIR do
       FileUtils.touch("index.html")
       sh "git add ."
       sh "git commit -m \"initial gh-pages commit\""
-      sh "git push #{remote_name} #{branch_name}"
+      sh "git push #{remote_name} #{branch_name} --quiet > /dev/null 2>&1"
     end
   end
 end
