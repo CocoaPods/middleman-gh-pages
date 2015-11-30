@@ -98,6 +98,6 @@ task :publish => [:prevent_dirty_builds, :sync_build_dir, :build] do
     else
       puts "No changes to commit."
     end
-    sh "git push #{remote_name} #{branch_name}"
+    sh "git push #{remote_name} #{branch_name} --quiet > /dev/null 2>&1"
   end
 end
